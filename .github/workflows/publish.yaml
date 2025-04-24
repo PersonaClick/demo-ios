@@ -1,4 +1,4 @@
-name: Publish to TestFlight
+name: Upload to TestFlight
 
 on:
   pull_request:
@@ -6,11 +6,12 @@ on:
       - closed
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
-  run:
-    if: github.event.pull_request.merged == true
-    uses: rees46/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@master
+  testflight-publish:
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/'))
+    uses: personaClick/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@c92a64f68df6311d99f60617f9d97c5c07ec39bb
     with:
       scheme: "demo-store-ios"
       xcworkspace: "demo-store-ios.xcworkspace"
@@ -18,8 +19,8 @@ jobs:
       developmentTeam: "MYA32EHWN4"
       provisioningProfileSpecifier: "demo-ios"
     secrets:
-      GITHUB_APP_ID: ${{ vars.PUBLIVERSIONER_ID }}
-      GITHUB_APP_PRIVATE_KEY: ${{ secrets.PUBLIVERSIONER_SECRET }}
+      GITHUB_APP_ID: ${{ vars.PERSONACLICK_COURIER_ID }}
+      GITHUB_APP_PRIVATE_KEY: ${{ secrets.PERSONACLICK_COURIER_SECRET }}
       APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
       APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
       APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_AS_BASE64_STRING }}

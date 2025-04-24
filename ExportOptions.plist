@@ -10,7 +10,7 @@
         <false/>
         <key>provisioningProfiles</key>
         <dict>
-            <key>com.rees46.demo-shop</key>
+            <key>com.personaClick.demo-shop</key>
             <string>demo-ios</string>
         </dict>
     </dict>
