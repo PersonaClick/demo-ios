@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PersonaClick:
-    :git: https://github.com/personaClick/ios-sdk.git
+    :git: https://github.com/personaclick/ios-sdk.git
     :tag: 3.6.60
 
 SPEC CHECKSUMS:

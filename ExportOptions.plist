@@ -10,8 +10,8 @@
         <false/>
         <key>provisioningProfiles</key>
         <dict>
-            <key>com.personaclick.demo-shop</key>
-            <string>demo-ios</string>
+            <key>com.personaclick.ios-demo</key>
+            <string>PersonaClick Demo Shop Distribution Profile</string>
         </dict>
     </dict>
 </plist>
