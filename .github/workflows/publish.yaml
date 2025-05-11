@@ -11,13 +11,13 @@ on:
 jobs:
   testflight-publish:
     if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/'))
-    uses: personaClick/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@master
+    uses: personaclick/workflow/.github/workflows/reusable-ios-testflight-publish.yaml@master
     with:
       scheme: "demo-store-ios"
       xcworkspace: "demo-store-ios.xcworkspace"
-      codeSignIdentity: "Apple Distribution: M.Kechinov's web-development studio, LLC (MYA32EHWN4)"
-      developmentTeam: "MYA32EHWN4"
-      provisioningProfileSpecifier: "demo-ios"
+      codeSignIdentity: "Apple Distribution: M.Kechinov's web-development studio, LLC (Z49R96MV7D)"
+      developmentTeam: "Z49R96MV7D"
+      provisioningProfileSpecifier: "PersonaClick Demo Shop Distribution Profile"
     secrets:
       GITHUB_APP_ID: ${{ vars.PERSONACLICK_COURIER_ID }}
       GITHUB_APP_PRIVATE_KEY: ${{ secrets.PERSONACLICK_COURIER_SECRET }}

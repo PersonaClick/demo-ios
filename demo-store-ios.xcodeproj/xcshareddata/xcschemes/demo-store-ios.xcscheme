@@ -128,7 +128,7 @@
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "IN_APP_NOTIFICATION_IMAGE_URL"
-            value = "https://image.slidesharecdn.com/personaClickproductpresentation-151112180026-lva1-app6891/75/PersonaClick-Product-Presentation-1-2048.jpg"
+            value = "https://image.slidesharecdn.com/personaclickproductpresentation-151112180026-lva1-app6891/75/PersonaClick-Product-Presentation-1-2048.jpg"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
